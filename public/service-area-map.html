@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; }
+  #map { width: 100%; height: 100%; }
+  .area-label {
+    background: rgba(255,255,255,0.92);
+    border-radius: 6px;
+    padding: 3px 8px;
+    font: 600 12px/1.3 system-ui, -apple-system, sans-serif;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    white-space: nowrap;
+  }
+  .legend {
+    background: rgba(255,255,255,0.95);
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    font: 500 12px/1.6 system-ui, -apple-system, sans-serif;
+    color: #16203A;
+  }
+  .legend span { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  // Approximate centers (OSM suburb nodes) — these societies aren't mapped as
+  // detailed polygons in OpenStreetMap, so each is shown as an approximate
+  // coverage circle around its known center point, not a surveyed boundary.
+  var jinnahGarden = [33.568, 73.17486];
+  var navalAnchorage = [33.56958, 73.19592];
+
+  var map = L.map('map', { zoomControl: true }).setView([33.5688, 73.1855], 13);
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  var green = '#3D8A2A';
+  var blue = '#2C4373';
+
+  var jg = L.circle(jinnahGarden, {
+    radius: 750,
+    color: green,
+    weight: 2,
+    fillColor: green,
+    fillOpacity: 0.22
+  }).addTo(map);
+  jg.bindTooltip('Jinnah Garden Housing Society', { permanent: true, direction: 'top', className: 'area-label', offset: [0, -6] });
+
+  var na = L.circle(navalAnchorage, {
+    radius: 900,
+    color: blue,
+    weight: 2,
+    fillColor: blue,
+    fillOpacity: 0.22
+  }).addTo(map);
+  na.bindTooltip('Naval Anchorage', { permanent: true, direction: 'top', className: 'area-label', offset: [0, -6] });
+
+  var bounds = L.latLngBounds([jinnahGarden, navalAnchorage]).pad(0.6);
+  map.fitBounds(bounds);
+
+  var legend = L.control({ position: 'bottomleft' });
+  legend.onAdd = function () {
+    var div = L.DomUtil.create('div', 'legend');
+    div.innerHTML =
+      '<div><span style="background:' + green + '"></span>Jinnah Garden</div>' +
+      '<div><span style="background:' + blue + '"></span>Naval Anchorage</div>';
+    return div;
+  };
+  legend.addTo(map);
+</script>
+</body>
+</html>
