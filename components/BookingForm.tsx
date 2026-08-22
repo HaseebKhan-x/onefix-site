@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-const WA_NUMBER = '923435321012';
+const WA_NUMBER = '923149219662';
 const TIME_SLOTS = ['Morning', 'Afternoon', 'Evening'];
 
 type Option = { slug: string; name: string };

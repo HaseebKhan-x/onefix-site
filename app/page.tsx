@@ -55,14 +55,14 @@ export default function HomePage() {
               <div className="flex items-start gap-3.5">
                 <i className="ph ph-map-pin mt-0.5 text-xl text-accent-300" />
                 <div>
-                  <div className="text-sm font-medium">Serving Lahore, Karachi, Islamabad and more</div>
+                  <div className="text-sm font-medium">Serving residents of Jinnah Garden and Naval Anchorage and more</div>
                   <div className="text-[13px] text-muted-500">See full coverage in the service area below</div>
                 </div>
               </div>
               <div className="flex items-start gap-3.5">
                 <i className="ph ph-whatsapp-logo mt-0.5 text-xl text-accent-300" />
                 <div>
-                  <div className="text-sm font-medium">+92 343 5321012</div>
+                  <div className="text-sm font-medium">+92 314 9219662</div>
                   <div className="text-[13px] text-muted-500">Call or message us on WhatsApp anytime</div>
                 </div>
               </div>

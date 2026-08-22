@@ -48,7 +48,7 @@ export default function Footer({ variant = 'full' }: { variant?: 'full' | 'simpl
           <div className="flex flex-col gap-2.5 text-sm text-muted-300">
             <span>
               <i className="ph ph-whatsapp-logo mr-1.5 text-accent-300" />
-              +92 343 5321012
+              +92 314 9219662
             </span>
             <span>
               <i className="ph ph-envelope-simple mr-1.5 text-accent-300" />

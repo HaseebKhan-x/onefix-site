@@ -13,7 +13,7 @@ export default function PartnerCTA() {
           </p>
         </div>
         <div className="flex md:justify-end">
-          <a href="tel:+923435321012" className="rounded-md bg-gradient-to-br from-accent-500 to-accent-800 px-7 py-3.5 text-[15px] text-white">
+          <a href="tel:+923149219662" className="rounded-md bg-gradient-to-br from-accent-500 to-accent-800 px-7 py-3.5 text-[15px] text-white">
             Register as a Professional
           </a>
         </div>

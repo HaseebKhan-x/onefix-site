@@ -41,8 +41,8 @@ export default function Nav({ variant = 'home' }: { variant?: 'home' | 'detail' 
           ))}
         </div>
         <div className="flex flex-shrink-0 items-center gap-3">
-          <a href="tel:+923435321012" className="hidden items-center gap-1.5 whitespace-nowrap text-sm text-ink xl:flex">
-            <i className="ph ph-whatsapp-logo" /> +92 343 5321012
+          <a href="tel:+923149219662" className="hidden items-center gap-1.5 whitespace-nowrap text-sm text-ink xl:flex">
+            <i className="ph ph-whatsapp-logo" /> +92 314 9219662
           </a>
           <a
             href="#book"

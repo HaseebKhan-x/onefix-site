@@ -48,7 +48,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <a href="#book" className="rounded-md bg-gradient-to-br from-accent-500 to-accent-800 px-6 py-3.5 text-[15px] text-white">
                 Book This Service
               </a>
-              <a href="tel:+923435321012" className="flex items-center gap-2 rounded-md border border-divider px-6 py-3.5 text-[15px]">
+              <a href="tel:+923149219662" className="flex items-center gap-2 rounded-md border border-divider px-6 py-3.5 text-[15px]">
                 <i className="ph ph-whatsapp-logo" /> Message on WhatsApp
               </a>
             </div>
